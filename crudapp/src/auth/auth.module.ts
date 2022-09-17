@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
+import { MailModule } from 'src/mail/mail.module';
+import { JwtStrategy } from './JwtStrategy';
 
 /**
  * Module is where we define all dependecies and relationships for nestjs application graph
@@ -10,13 +12,13 @@ import { JwtModule } from '@nestjs/jwt';
   /**
    * things that have to be injected into controllers
    */
-  providers: [AuthService],
+  providers: [AuthService, JwtStrategy],
 
   // the controllers in this module
   controllers: [AuthController],
 
   // Modules required for this module
-  imports: [JwtModule.register({})],
+  imports: [JwtModule.register({}), MailModule],
 
   // the subset of providers that are provided by this module and should be available in other modules which import this module.
   exports: [],

@@ -37,6 +37,9 @@ export class AuthController {
     return this.AuthService.verifyLogic(OTP, email);
   }
 
+  /**
+   * Sample Testing Route
+   */
   @Post('/hehe')
   test(@Body('email') email: string) {
     return this.AuthService.getotp(email);

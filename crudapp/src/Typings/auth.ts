@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class AuthLogin {
   @IsEmail()
@@ -15,5 +15,17 @@ export class AuthSignup extends AuthLogin {
   }
   @IsString()
   @IsNotEmpty()
-  Firstname: string;
+  FirstName: string;
+}
+
+export class EditUser {
+  @IsEmail()
+  @IsOptional()
+  email: string;
+  @IsString()
+  @IsOptional()
+  password: string;
+  @IsString()
+  @IsOptional()
+  FirstName: string;
 }

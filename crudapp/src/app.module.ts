@@ -9,6 +9,9 @@ import { AuthModule } from './auth/auth.module';
 import { LogRequest } from './middleware';
 import { PrismaService } from './prisma/prisma.service';
 import { PrismaModule } from './prisma/prisma.module';
+import { MailModule } from './mail/mail.module';
+import { UserModule } from './user/user.module';
+import { SavedPostModule } from './saved-post/saved-post.module';
 import * as ReddiStore from 'cache-manager-redis-store';
 
 /**
@@ -30,6 +33,9 @@ import * as ReddiStore from 'cache-manager-redis-store';
     }),
     AuthModule,
     PrismaModule,
+    MailModule,
+    UserModule,
+    SavedPostModule,
   ],
   providers: [PrismaService],
 })

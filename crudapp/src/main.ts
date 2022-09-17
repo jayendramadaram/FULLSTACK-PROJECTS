@@ -8,6 +8,10 @@ import { AppModule } from './app.module';
  */
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  /**
+   * These global Pipes ensure to extract data from incomming Body
+   * I was also using class-validator and class-transformer for support
+   */
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
