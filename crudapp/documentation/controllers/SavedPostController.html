@@ -37,7 +37,7 @@
 
 <ol class="breadcrumb">
   <li>Controllers</li>
-  <li >AuthController</li>
+  <li >SavedPostController</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -55,30 +55,17 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/auth/auth.controller.ts</code>
+            <code>src/saved-post/saved-post.controller.ts</code>
         </p>
 
             <p class="comment">
                 <h3>Prefix</h3>
             </p>
             <p class="comment">
-                <code>auth</code>
+                <code>saved-post</code>
             </p>
 
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Controller to take all requests and send responses</p>
-<ul>
-<li>Signup</li>
-<li>Signin</li>
-<li>forgot Passwrod</li>
-<li>Verify Otp</li>
-</ul>
-
-            </p>
 
 
 
@@ -97,19 +84,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ForgotPwd" >ForgotPwd</a>
+                                <a href="#createBookmark" >createBookmark</a>
                             </li>
                             <li>
-                                <a href="#Login" >Login</a>
+                                <a href="#deleteBookmarkById" >deleteBookmarkById</a>
                             </li>
                             <li>
-                                <a href="#Signup" >Signup</a>
+                                <a href="#getBookmarkById" >getBookmarkById</a>
                             </li>
                             <li>
-                                <a href="#test" >test</a>
-                            </li>
-                            <li>
-                                <a href="#verifyOTP" >verifyOTP</a>
+                                <a href="#getBookmarks" >getBookmarks</a>
                             </li>
                         </ul>
                     </td>
@@ -132,16 +116,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ForgotPwd"></a>
+                    <a name="createBookmark"></a>
                     <span class="name">
-                        <span ><b>ForgotPwd</b></span>
-                        <a href="#ForgotPwd"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>createBookmark</b></span>
+                        <a href="#createBookmark"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ForgotPwd(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>createBookmark(req: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, dto: <a href="../classes/CreateBookmarkDto.html" target="_self">CreateBookmarkDto</a>)</code>
                 </td>
             </tr>
 
@@ -149,14 +133,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post(&#x27;/forgotPwd&#x27;)<br /></code>
+                    <code>@Post()<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/auth/auth.controller.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/saved-post/saved-post.controller.ts:35</a></div>
                 </td>
             </tr>
 
@@ -177,9 +161,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>email</td>
+                                    <td>req</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
 
                                     <td>
@@ -188,228 +172,10 @@
 
 
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="Login"></a>
-                    <span class="name">
-                        <span ><b>Login</b></span>
-                        <a href="#Login"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>Login(body: <a href="../classes/AuthLogin.html" target="_self">AuthLogin</a>)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;/Login&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/auth/auth.controller.ts:23</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>body</td>
+                                    <td>dto</td>
                                     <td>
-                                                <code><a href="../classes/AuthLogin.html" target="_self" >AuthLogin</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="Signup"></a>
-                    <span class="name">
-                        <span ><b>Signup</b></span>
-                        <a href="#Signup"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>Signup(body: <a href="../classes/AuthSignup.html" target="_self">AuthSignup</a>)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;/Signup&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/auth/auth.controller.ts:18</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>body</td>
-                                    <td>
-                                                <code><a href="../classes/AuthSignup.html" target="_self" >AuthSignup</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="test"></a>
-                    <span class="name">
-                        <span ><b>test</b></span>
-                        <a href="#test"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>test(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;/hehe&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/auth/auth.controller.ts:44</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Sample Testing Route</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>email</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="../classes/CreateBookmarkDto.html" target="_self" >CreateBookmarkDto</a></code>
                                     </td>
 
                                     <td>
@@ -438,16 +204,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="verifyOTP"></a>
+                    <a name="deleteBookmarkById"></a>
                     <span class="name">
-                        <span ><b>verifyOTP</b></span>
-                        <a href="#verifyOTP"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>deleteBookmarkById</b></span>
+                        <a href="#deleteBookmarkById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>verifyOTP(OTP: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>deleteBookmarkById(req: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, savedid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
@@ -455,14 +221,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post(&#x27;/verifyOTP&#x27;)<br /></code>
+                    <code>@Delete(&#x27;:id&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/auth/auth.controller.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/saved-post/saved-post.controller.ts:40</a></div>
                 </td>
             </tr>
 
@@ -483,9 +249,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>OTP</td>
+                                    <td>req</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
 
                                     <td>
@@ -495,9 +261,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>email</td>
+                                    <td>savedid</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
 
                                     <td>
@@ -512,7 +278,171 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBookmarkById"></a>
+                    <span class="name">
+                        <span ><b>getBookmarkById</b></span>
+                        <a href="#getBookmarkById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBookmarkById(req: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, savedid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;:id&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/saved-post/saved-post.controller.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>savedid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBookmarks"></a>
+                    <span class="name">
+                        <span ><b>getBookmarks</b></span>
+                        <a href="#getBookmarks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBookmarks(req: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/saved-post/saved-post.controller.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -526,51 +456,50 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Post, Get, Body } from &#x27;@nestjs/common&#x27;;
-import { AuthLogin, AuthSignup } from &#x27;src/Typings&#x27;;
-import { AuthService } from &#x27;./auth.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+  Req,
+  UseGuards,
+} from &#x27;@nestjs/common&#x27;;
+import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
+import { Request } from &#x27;express&#x27;;
+import { CreateBookmarkDto } from &#x27;src/Typings/saved&#x27;;
+import { SavedPostService } from &#x27;./saved-post.service&#x27;;
 
-/**
- * Controller to take all requests and send responses
- *
- * - Signup
- * - Signin
- * - forgot Passwrod
- * - Verify Otp
- */
-@Controller(&#x27;auth&#x27;)
-export class AuthController {
-  constructor(private AuthService: AuthService) {}
+@UseGuards(AuthGuard(&#x27;jwt&#x27;))
+@Controller(&#x27;saved-post&#x27;)
+export class SavedPostController {
+  constructor(private Saved: SavedPostService) {}
 
-  @Post(&#x27;/Signup&#x27;)
-  Signup(@Body() body: AuthSignup): Promise&lt;object&gt; {
-    return this.AuthService.signupLogic(body);
+  @Get()
+  getBookmarks(@Req() req: any) {
+    console.log(req.user);
+
+    return this.Saved.getAllSaved(req.user.id);
   }
 
-  @Post(&#x27;/Login&#x27;)
-  Login(@Body() body: AuthLogin): Promise&lt;object&gt; {
-    return this.AuthService.loginLogic(body);
+  @Get(&#x27;:id&#x27;)
+  getBookmarkById(@Req() req: any, @Param(&#x27;id&#x27;, ParseIntPipe) savedid: number) {
+    return this.Saved.getSavedByID(req.user.id, savedid);
   }
 
-  @Post(&#x27;/forgotPwd&#x27;)
-  ForgotPwd(@Body(&#x27;email&#x27;) email: string): Promise&lt;object&gt; {
-    return this.AuthService.forgotLogic(email);
+  @Post()
+  createBookmark(@Req() req: any, @Body() dto: CreateBookmarkDto) {
+    return this.Saved.creatSaved(req.user.id, dto);
   }
 
-  @Post(&#x27;/verifyOTP&#x27;)
-  verifyOTP(
-    @Body(&#x27;OTP&#x27;) OTP: number,
-    @Body(&#x27;email&#x27;) email: string,
-  ): Promise&lt;object&gt; {
-    return this.AuthService.verifyLogic(OTP, email);
-  }
-
-  /**
-   * Sample Testing Route
-   */
-  @Post(&#x27;/hehe&#x27;)
-  test(@Body(&#x27;email&#x27;) email: string) {
-    return this.AuthService.getotp(email);
+  @Delete(&#x27;:id&#x27;)
+  deleteBookmarkById(
+    @Req() req: any,
+    @Param(&#x27;id&#x27;, ParseIntPipe) savedid: number,
+  ) {
+    return this.Saved.deleteBookmarkById(req.user.id, savedid);
   }
 }
 </code></pre>
@@ -618,7 +547,7 @@ export class AuthController {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthController.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'SavedPostController.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
