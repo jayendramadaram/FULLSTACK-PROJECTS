@@ -113,6 +113,13 @@
 
 
 
+        <p class="comment">
+            <h3>Description</h3>
+        </p>
+        <p class="comment">
+            <p>Root Of the APP with request logging middleware implemented</p>
+
+        </p>
 
 
         <div class="container-fluid module">
@@ -129,18 +136,105 @@
             </div>
         </div>
 
+        <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configure"></a>
+                    <span class="name">
+                        <span ><b>configure</b></span>
+                        <a href="#configure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>configure(consumer: MiddlewareConsumer)</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app.module.ts:15</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Configuring the middleware for routes</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>consumer</td>
+                                    <td>
+                                            <code>MiddlewareConsumer</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MiddlewareConsumer, Module, NestModule } from &#x27;@nestjs/common&#x27;;
 import { AuthModule } from &#x27;./auth/auth.module&#x27;;
+import { LogRequest } from &#x27;./middleware&#x27;;
 
+/**
+ * Root Of the APP with request logging middleware implemented
+ */
 @Module({
   imports: [AuthModule],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  /**
+   * Configuring the middleware for routes
+   */
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LogRequest).forRoutes(&#x27;*&#x27;);
+  }
+}
 </code></pre>
     </div>
 </div>

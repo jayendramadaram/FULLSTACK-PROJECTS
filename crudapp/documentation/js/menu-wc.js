@@ -115,6 +115,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <li class="link">
                                     <a href="injectables/AuthService.html" data-type="entity-link" >AuthService</a>
                                 </li>
+                                <li class="link">
+                                    <a href="injectables/LogRequest.html" data-type="entity-link" >LogRequest</a>
+                                </li>
                             </ul>
                         </li>
                     <li class="chapter">
