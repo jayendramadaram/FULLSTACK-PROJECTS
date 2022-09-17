@@ -1,4 +1,5 @@
 import { Controller, Post, Get, Body } from '@nestjs/common';
+import { AuthLogin, AuthSignup } from 'src/Typings';
 import { AuthService } from './auth.service';
 
 /**
@@ -14,22 +15,22 @@ export class AuthController {
   constructor(private AuthService: AuthService) {}
 
   @Post('/Signup')
-  Signup(@Body() body): Promise<string> {
+  Signup(@Body() body: AuthSignup): Promise<object> {
     return this.AuthService.signupLogic(body);
   }
 
   @Post('/Login')
-  Login(): Promise<string> {
-    return this.AuthService.loginLogic();
+  Login(@Body() body: AuthLogin): Promise<object> {
+    return this.AuthService.loginLogic(body);
   }
 
   @Post('/forgotPwd')
-  ForgotPwd(): Promise<string> {
+  ForgotPwd(): Promise<object> {
     return this.AuthService.forgotLogic();
   }
 
   @Post('/verifyOTP')
-  verifyOTP(): Promise<string> {
+  verifyOTP(): Promise<object> {
     return this.AuthService.verifyLogic();
   }
 }
