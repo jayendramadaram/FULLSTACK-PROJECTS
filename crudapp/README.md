@@ -17,5 +17,7 @@ Stack used
 - Docker i am using to run my postgres instance on port `5434` this is my first time tho
 - Running Redis instance on docker for OTP support
 
-Dependencies and Architecture 
+##Dependencies and Architecture 
+![Image](https://raw.githubusercontent.com/jayendramadaram/NestProjects/main/crudapp/documentation/graph/dependencies.svg)
+
 ![Image](https://raw.githubusercontent.com/jayendramadaram/NestProjects/main/crudapp/documentation/modules/AppModule/dependencies.svg)
