@@ -1,4 +1,4 @@
-import { Controller, Post, Get } from '@nestjs/common';
+import { Controller, Post, Get, Body } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
 /**
@@ -14,22 +14,22 @@ export class AuthController {
   constructor(private AuthService: AuthService) {}
 
   @Post('/Signup')
-  async Signup(): Promise<string> {
-    return this.AuthService.signupLogic();
+  Signup(@Body() body): Promise<string> {
+    return this.AuthService.signupLogic(body);
   }
 
   @Post('/Login')
-  async Login(): Promise<string> {
+  Login(): Promise<string> {
     return this.AuthService.loginLogic();
   }
 
   @Post('/forgotPwd')
-  async ForgotPwd(): Promise<string> {
+  ForgotPwd(): Promise<string> {
     return this.AuthService.forgotLogic();
   }
 
   @Post('/verifyOTP')
-  async verifyOTP(): Promise<string> {
+  verifyOTP(): Promise<string> {
     return this.AuthService.verifyLogic();
   }
 }

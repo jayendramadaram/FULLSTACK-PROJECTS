@@ -2,16 +2,19 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AuthService {
-  signupLogic(): string {
+  async signupLogic(body: any): Promise<string> {
+    console.log('here is your body', body);
+
     return 'My Soldiers RAGEE';
   }
-  loginLogic(): string {
+
+  async loginLogic(): Promise<string> {
     return 'My Soldiers RAGEE';
   }
-  forgotLogic(): string {
+  async forgotLogic(): Promise<string> {
     return 'My Soldiers RAGEE';
   }
-  verifyLogic(): string {
+  async verifyLogic(): Promise<string> {
     return 'My Soldiers RAGEE';
   }
 }
