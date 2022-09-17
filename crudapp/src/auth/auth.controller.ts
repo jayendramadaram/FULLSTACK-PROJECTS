@@ -25,12 +25,20 @@ export class AuthController {
   }
 
   @Post('/forgotPwd')
-  ForgotPwd(): Promise<object> {
-    return this.AuthService.forgotLogic();
+  ForgotPwd(@Body('email') email: string): Promise<object> {
+    return this.AuthService.forgotLogic(email);
   }
 
   @Post('/verifyOTP')
-  verifyOTP(): Promise<object> {
-    return this.AuthService.verifyLogic();
+  verifyOTP(
+    @Body('OTP') OTP: number,
+    @Body('email') email: string,
+  ): Promise<object> {
+    return this.AuthService.verifyLogic(OTP, email);
+  }
+
+  @Post('/hehe')
+  test(@Body('email') email: string) {
+    return this.AuthService.getotp(email);
   }
 }
